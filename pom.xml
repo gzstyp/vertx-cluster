@@ -9,7 +9,12 @@
   <version>v1.0.0</version>
 
   <description>
-    vert.x集群示例代码
+    vert.x集群示例代码,无需指定端口号???
+    java -jar cluster-fat.jar -cluster -Djava.net.preferIPv4Stack=true
+    java -jar cluster-fat.jar -cluster -Djava.net.preferIPv4Stack=true -Dhttp.port=8070
+
+    java -jar vertx-cluster-v1.0.0-fat.jar -cluster -Djava.net.preferIPv4Stack=true
+    java -jar vertx-cluster-v1.0.0-fat.jar -cluster -Djava.net.preferIPv4Stack=true -Dhttp.port=8070
   </description>
 
   <properties>
@@ -22,7 +27,7 @@
     <maven-shade-plugin.version>3.2.4</maven-shade-plugin.version>
     <exec-maven-plugin.version>3.0.0</exec-maven-plugin.version>
 
-    <vertx.version>3.9.5</vertx.version>
+    <vertx.version>4.0.2</vertx.version>
     <junit-jupiter.version>5.7.0</junit-jupiter.version>
 
     <main.verticle>com.fwtai.VertxLauncher</main.verticle>
@@ -46,10 +51,6 @@
       <groupId>io.vertx</groupId>
       <artifactId>vertx-config</artifactId>
     </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-jdbc-client</artifactId>
-    </dependency>
     <!--集群部署依赖,它只是其中的1种,官方提供了4种集群方案-->
     <dependency>
       <groupId>io.vertx</groupId>
@@ -58,10 +59,6 @@
     <dependency>
       <groupId>io.vertx</groupId>
       <artifactId>vertx-web</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.vertx</groupId>
-      <artifactId>vertx-mysql-client</artifactId>
     </dependency>
     <dependency>
       <groupId>io.vertx</groupId>
